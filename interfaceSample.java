@@ -86,7 +86,9 @@ public class interfaceSample {
             return;
         }
 
-        for(int list = 0; list < iSample.listOFAuthor.length; list++){
+        int length = iSample.listOfBookName.length;
+
+        for(int list = 0; list < length; list++){
             System.out.println();
             bname.setNameOfTheBook(iSample.listOfBookName[list]);
             System.out.println("Name of the Book: " +bname.getNameOfTheBook());
