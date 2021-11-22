@@ -1,3 +1,6 @@
+/*  Multiplication Table Version 1
+    Using Array to store value for multiplier and multiplicand
+*/
 import java.util.Arrays;
 
 public class MultiplicationTableV1 {
@@ -14,6 +17,7 @@ public class MultiplicationTableV1 {
     }
 
     public void Multiply(){
+
         int product = 0;
         for(int index = 0; index < length; index++){
             product = multiplier[index] * multiplicand[increment];
