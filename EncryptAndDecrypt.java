@@ -7,7 +7,7 @@ public class EncryptAndDecrypt {
     public static void main(String[] args) {
 
         EncryptAndDecrypt ed = new EncryptAndDecrypt();
-        final int KEY = 2;
+        final int KEY = 10000;
         
         String text = ed.inputString();
 
@@ -16,6 +16,7 @@ public class EncryptAndDecrypt {
         ed.insertLine();
         String encryptString = ed.Encrypt(text, KEY);
         System.out.println("Decrypt: " + ed.Decrypt(encryptString, KEY));
+        ed.insertLine();
     }
 
     private String inputString(){
