@@ -149,7 +149,6 @@ public class CRUDFunction{
         bufferedReader.close();
         if(isExists == false){
             System.out.println("This Criminal Number in the Record is not found");
-            return;
         }
         loopLine();
     }
