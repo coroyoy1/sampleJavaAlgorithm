@@ -20,7 +20,7 @@ public class CRUDFunction{
 
     public void AddRecord() throws IOException{
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(path, true));
-        criminalNumber = (int)(Math.random() * 1000000);
+        criminalNumber = (int)(Math.random() * 99999999);
         System.out.println("Name of the Criminal?: ");
         criminalName = input.nextLine();
         System.out.println("Date arrested?: ");
@@ -119,6 +119,71 @@ public class CRUDFunction{
         loopLine();
         if(success == true){
             System.out.println("Successfully Update Record");
+        }
+        loopLine();
+    }
+
+    public void SearchRecord() throws IOException{
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
+        String record;
+        StringTokenizer stringTokenizer;
+        boolean isExists = false;
+
+        System.out.println("Enter a Criminal Number: ");
+        criminalNumber = input.nextInt();
+        
+        loopLine();
+        while((record = bufferedReader.readLine()) != null){
+            stringTokenizer = new StringTokenizer(record, ",");
+            if(record.contains(String.valueOf(criminalNumber))){
+                getToken[0] = stringTokenizer.nextToken();
+                getToken[1] = stringTokenizer.nextToken();
+                getToken[2] = stringTokenizer.nextToken();
+                getToken[3] = stringTokenizer.nextToken();
+                getToken[4] = stringTokenizer.nextToken();
+                System.out.println(getToken[0] + "\t\t" +getToken[1]+"\t\t"+
+                getToken[2]+"\t\t"+getToken[3]+"\t\t"+getToken[4]);
+                isExists = true;
+            }
+        }
+        bufferedReader.close();
+        if(isExists == false){
+            System.out.println("This Criminal Number in the Record is not found");
+            return;
+        }
+        loopLine();
+    }
+
+    public void DeleteRecord() throws IOException{
+        String record, accept = "y";
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(tempPath));
+        boolean isExists = false;
+        
+        loopLine();
+        System.out.println("Enter a Criminal Record: ");
+        criminalNumber = input.nextInt();
+        while((record = bufferedReader.readLine()) != null){
+            if(record.contains(String.valueOf(criminalNumber))){
+                isExists = true;
+                input.nextLine();
+                System.out.println("Do you want to delete the record? (Y/N)");
+                accept = input.nextLine();
+                if(accept.equalsIgnoreCase("y")){
+                    System.out.println("Criminal Number with Record is successfully deleted!");
+                    continue;
+                }
+            }
+            bufferedWriter.write(record);
+            bufferedWriter.flush();
+            bufferedWriter.newLine();
+        }
+        bufferedReader.close();
+        bufferedWriter.close();
+        path.delete();
+        tempPath.renameTo(path);
+        if(isExists == false){
+            System.out.println("This Criminal Number does not exists in the Record");
         }
         loopLine();
     }

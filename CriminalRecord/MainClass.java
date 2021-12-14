@@ -30,10 +30,10 @@ public class MainClass{
                 crud.UpdateRecord();
             }
             else if(choice.equals("4")){
-
+                crud.DeleteRecord();
             }
             else if(choice.equals("5")){
-
+                crud.SearchRecord();
             }
             System.out.println("Do you want to continue?");
             cont = input.nextLine();
