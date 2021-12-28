@@ -1,5 +1,5 @@
 27790,Karly James,4/11/2024,Murder,Life In Prison
-611695,Cris Morphy,11/20/2012,Murder,Life in Prison
+611695,Morphy,10/19/2021,Murder,Life In Prison
 945604,Joseph Strax,9/20/1991,Tax Evasion,5 Years in Prison
 32817297,Peter Olsen,9/11/2011,Sexual Harrassment,2 Years in Prison
 20642778,Jhon Cover,2/21/2022,Tax Evasion,5 Years in Prison

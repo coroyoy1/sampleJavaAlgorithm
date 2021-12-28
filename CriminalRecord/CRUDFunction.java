@@ -45,13 +45,11 @@ public class CRUDFunction{
         loopLine();
         while((record = bufferedReader.readLine()) != null){
             stringTokenizer = new StringTokenizer(record, ",");
-            getToken[0] = stringTokenizer.nextToken();
-            getToken[1] = stringTokenizer.nextToken();
-            getToken[2] = stringTokenizer.nextToken();
-            getToken[3] = stringTokenizer.nextToken();
-            getToken[4] = stringTokenizer.nextToken();
-            System.out.println(getToken[0] + "\t\t" +getToken[1]+"\t\t"+
-            getToken[2]+"\t\t"+getToken[3]+"\t\t"+getToken[4]);
+            for(int index = 0; index < getToken.length; index++){
+                getToken[index] = stringTokenizer.nextToken();
+                System.out.print(getToken[index] + "\t");
+            }
+            System.out.println();
         }
         loopLine();
         bufferedReader.close();
@@ -71,15 +69,13 @@ public class CRUDFunction{
         criminalNumber = input.nextInt();
         loopLine();
         while((record = bufferedReader.readLine()) != null){
-            stringTokenizer = new StringTokenizer(record, ",");
             if(record.contains(String.valueOf(criminalNumber))){
-                getToken[0] = stringTokenizer.nextToken();
-                getToken[1] = stringTokenizer.nextToken();
-                getToken[2] = stringTokenizer.nextToken();
-                getToken[3] = stringTokenizer.nextToken();
-                getToken[4] = stringTokenizer.nextToken();
-                System.out.println(getToken[0] + "\t\t" +getToken[1]+"\t\t"+
-                getToken[2]+"\t\t"+getToken[3]+"\t\t"+getToken[4]);
+                stringTokenizer = new StringTokenizer(record, ",");
+                for(int index = 0; index < getToken.length; index++){
+                    getToken[index] = stringTokenizer.nextToken();
+                    System.out.print(getToken[index] + "\t");
+                }
+                System.out.println();
                 isExists = true;
             }
         }
@@ -136,13 +132,11 @@ public class CRUDFunction{
         while((record = bufferedReader.readLine()) != null){
             stringTokenizer = new StringTokenizer(record, ",");
             if(record.contains(String.valueOf(criminalNumber))){
-                getToken[0] = stringTokenizer.nextToken();
-                getToken[1] = stringTokenizer.nextToken();
-                getToken[2] = stringTokenizer.nextToken();
-                getToken[3] = stringTokenizer.nextToken();
-                getToken[4] = stringTokenizer.nextToken();
-                System.out.println(getToken[0] + "\t\t" +getToken[1]+"\t\t"+
-                getToken[2]+"\t\t"+getToken[3]+"\t\t"+getToken[4]);
+                for(int index = 0; index < getToken.length; index++){
+                    getToken[index] = stringTokenizer.nextToken();
+                    System.out.print(getToken[index] + "\t");
+                }
+                System.out.println();
                 isExists = true;
             }
         }
